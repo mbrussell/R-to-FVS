@@ -135,6 +135,12 @@ plot <- TreeInit %>%
   select(STAND_ID, PLOT_ID, YEAR)
 plot
 
+num_plot <- plot %>% 
+  group_by(STAND_ID, YEAR) %>% 
+  summarize(num_plots = n()) %>% 
+  select(STAND_ID, YEAR, num_plots)
+num_plot
+
 # CREATE make_FVS_PlotInit() function
 
 make_FVS_PlotInit <- function(){
@@ -284,6 +290,15 @@ PlotInit <- FVS_PlotInit_blank %>%
     PHOTO_REF = NA,
     PHOTO_CODE = NA) %>% 
   drop_na(PLOT_ID)
+
+PlotInit <- inner_join(PlotInit, num_plot)
+
+PlotInit <- PlotInit %>% 
+  select(-c(NUM_PLOTS))
+
+PlotInit <- PlotInit %>%
+  rename(NUM_PLOTS = num_plots) %>% 
+  relocate(NUM_PLOTS, .after = BRK_DBH)
 
 # Summarize PlotInit to create StandInit (list of stands)
 
@@ -436,6 +451,15 @@ StandInit <- FVS_StandInit_blank %>%
     PHOTO_REF	= NA,
     PHOTO_CODE = NA) %>% 
   drop_na(STAND_ID)
+
+StandInit <- inner_join(StandInit, num_plot)
+
+StandInit <- StandInit %>% 
+  select(-c(NUM_PLOTS))
+
+StandInit <- StandInit %>%
+  rename(NUM_PLOTS = num_plots) %>% 
+  relocate(NUM_PLOTS, .after = BRK_DBH)
 
 # Omit YEAR from TreeInit (not needed in FVS file)
 
