@@ -12,9 +12,9 @@ At a minimum you need to supply a tree list file with these variables:
 
 You will also need to specify general information about the model variant and forest:
 
-* **VARIANT** Two-letter FVSvariant code: [see here](https://www.fs.usda.gov/fvs/software/variantkey.shtml)	
-* **LOCATION** Three-digit forest locaton code: [see here](https://www.fs.usda.gov/fvs/software/variantkey.shtml)	
+* **VARIANT**, Two-letter FVSvariant code: [see here](https://www.fs.usda.gov/fvs/software/variantkey.shtml)	
+* **LOCATION**, Three-digit forest locaton code: [see here](https://www.fs.usda.gov/fvs/software/variantkey.shtml)	
 * **SITE_SPECIES**, the FVS species code for site index species
 * **BASAL_AREA_FACTOR**, for a positive value = basal area factor. Negative value = inverse of a large-tree fixed area plot. 
-or 
+* *or* 
 **INV_PLOT_SIZE**, Fixed-radius plot expansion factor
