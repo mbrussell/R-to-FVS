@@ -16,5 +16,5 @@ You will also need to specify general information about the model variant and fo
 * **LOCATION**, Three-digit forest locaton code: [see here](https://www.fs.usda.gov/fvs/software/variantkey.shtml)	
 * **SITE_SPECIES**, the FVS species code for site index species
 * **BASAL_AREA_FACTOR**, for a positive value = basal area factor. Negative value = inverse of a large-tree fixed area plot. 
-* *or* 
-**INV_PLOT_SIZE**, Fixed-radius plot expansion factor
+* *or*, 
+* **INV_PLOT_SIZE**, Fixed-radius plot expansion factor
