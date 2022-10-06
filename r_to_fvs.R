@@ -13,6 +13,8 @@ library(openxlsx)
 VARIANT = "ne" # See https://www.fs.usda.gov/fvs/software/variantkey.shtml	
 LOCATION = 922 # See local FVS variant guide
 BASAL_AREA_FACTOR	= -20 # A positive value = basal area factor. Negative value = inverse of a large-tree fixed area plot.
+# INV_PLOT_SIZE = 5 # Fixed-radius plot expansion factor
+# BRK_DBH = 999
 SITE_SPECIES = "RS" # FVS species code for site index species
 
 # CREATE an example data set with 20 tree observations from two plots in one stand 
